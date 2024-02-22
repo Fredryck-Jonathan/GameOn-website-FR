@@ -270,6 +270,20 @@ label {
   display: inline-block;
   margin-bottom: 11px;
 }
+
+.label-quantity-desktop{
+
+  display: block;
+
+}
+
+.label-quantity-phone{
+
+  display: none;
+
+}
+
+
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
@@ -598,7 +612,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
 
   .bground, .bground-validated{
 
@@ -613,7 +627,7 @@ footer {
     margin: 0px;
     padding-bottom: 10px;
 
-    height: 85%;
+    height: 90%;
 
     border-radius: 10px 10px 0px 0px;
 
@@ -638,6 +652,18 @@ footer {
 
     font-size: 14px;
     font-weight: 400;
+
+  }
+
+  .label-quantity-desktop{
+
+    display: none;
+
+  }
+
+  .label-quantity-phone{
+
+    display: block;
 
   }
 

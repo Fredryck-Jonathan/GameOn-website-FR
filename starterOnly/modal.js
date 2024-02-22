@@ -68,23 +68,6 @@ function closeModalValidated() {
 }
 
 
-
-/*
-*
-*
-Fonction changement texte en fonction de la taille de l'écran
-*/
-function init() {
-
-  if (window.screen.width <= 500) {
-    let labelToModify = formData[4].querySelector("label");
-    console.log(labelToModify, formData[4])
-    labelToModify.textContent = "À combien de tournois avez-vous déjà participé ?";
-  }
-
-
-}
-
 /** 
 * 
 *
@@ -106,8 +89,6 @@ function validate(event) {
   let allResultsOfVerification = [];
 
   let firstName = verificationFirstName();
-
-
 
   let lastName = verificationLastName();
 
@@ -196,8 +177,6 @@ function verificationFirstName(){
 
     let formDataEvent = inputFirstName.parentElement;
 
-    formDataEvent.setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du Prenom.")
-
     formDataEvent.setAttribute("data-error-visible" , "true")
 
     return false
@@ -229,8 +208,6 @@ function verificationLastName() {
 
     let formDataEvent = inputLastName.parentElement;
 
-    formDataEvent.setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le champ du Nom.")
-
     formDataEvent.setAttribute("data-error-visible" , "true")
 
     return false
@@ -247,8 +224,6 @@ function verificationLastName() {
 */
 function verificationEmail() { 
 
-
-
   let inputEmail = document.getElementById("email");
 
   const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -260,8 +235,6 @@ function verificationEmail() {
   } else {
 
     let formDataEvent = inputEmail.parentElement;
-
-    formDataEvent.setAttribute("data-error", "Vous devez entrer une adresse Email valide.")
 
     formDataEvent.setAttribute("data-error-visible" , "true")
 
@@ -292,8 +265,6 @@ function verificationBirthdate() {
 
     let formDataEvent = inputBirthdate.parentElement;
 
-    formDataEvent.setAttribute("data-error", "Vous devez entrer votre date de naissance.")
-
     formDataEvent.setAttribute("data-error-visible" , "true")
 
     return false
@@ -323,8 +294,6 @@ function verificationNumberOfCompetition() {
   } else {
 
     let formDataEvent = inputQuantity.parentElement;
-
-    formDataEvent.setAttribute("data-error", "Vous devez rentrer une valeur numérique exemple : 32")
 
     formDataEvent.setAttribute("data-error-visible" , "true")
 
@@ -366,8 +335,6 @@ function verificationWishTournament() {
 
         console.log(formDataEvent)
 
-        formDataEvent.setAttribute("data-error", "Vous devez choisir une option.")
-    
         formDataEvent.setAttribute("data-error-visible" , "true")
 
         return false
@@ -421,8 +388,6 @@ function verificationConditionOfUtilisation() {
 
     let formDataEvent = inputConditionOfUtilisation.parentElement;
 
-    formDataEvent.setAttribute("data-error", "Vous devez accepter les conditions d'uilisations")
-
     formDataEvent.setAttribute("data-error-visible" , "true")
 
     return false
@@ -431,14 +396,6 @@ function verificationConditionOfUtilisation() {
 
 
 }
-
-
-
-
-
-
-
-
 
 window.addEventListener("DOMContentLoaded", (event) => {
   init();

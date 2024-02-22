@@ -31,7 +31,7 @@
 
     <div class="main-navbar">
 
-      <a href="#"><span>Détails de l'évènement</span></a>
+      <a href="#" class="active"><span>Détails de l'évènement</span></a>
 
       <a href="#"><span>À propos</span></a>
 
@@ -83,7 +83,10 @@
               onsubmit="return validate(event);"
             >
               <div
-                class="formData">
+                class="formData"
+                data-error="Veuillez entrer 2 caractères ou plus pour le champ du Prenom." 
+                data-error-visible="false">
+
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
@@ -94,7 +97,10 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData"
+                data-error="Veuillez entrer 2 caractères ou plus pour le champ du Nom." 
+                data-error-visible="false">
+
                 <label for="last">Nom</label><br>
                 <input
                   class="text-control"
@@ -104,7 +110,10 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez entrer une adresse Email valide." 
+                data-error-visible="false">
+
                 <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
@@ -114,7 +123,10 @@
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez entrer votre date de naissance." 
+                data-error-visible="false">
+
                 <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -124,13 +136,20 @@
                 /><br>
               </div>
               <div
-                class="formData">
-                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                class="formData"
+                data-error="Vous devez rentrer une valeur numérique exemple : 32" 
+                data-error-visible="false">
+
+                <label class="label-quantity-desktop" for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
+                <label class="label-quantity-phone" for="quantity">À combien de tournois avez-vous déjà participé ?</label>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez choisir une option." 
+                data-error-visible="false">
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -200,7 +219,9 @@
               </div>
 
               <div
-                class="formData">
+                class="formData"
+                data-error="Vous devez accepter les conditions d'uilisations" 
+                data-error-visible="false">
                 <input
                   class="checkbox-input"
                   type="checkbox"
