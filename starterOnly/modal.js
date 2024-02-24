@@ -55,7 +55,7 @@ modalValidatedCloseBtn.forEach((btnCLose) => btnCLose.addEventListener("click", 
 /*
 *
 *
-*close modals events
+*close modals Fonction
 */
 function closeModal() {
   modalbg.style.display = "none";
