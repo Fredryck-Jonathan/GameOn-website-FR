@@ -93,7 +93,7 @@ img {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
-    right: 225px;
+    right: 240px;
     top: 0;
   }
   .topnav.responsive a {
@@ -590,7 +590,7 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 3rem;
     white-space: normal;
   }
   .hero-text {
@@ -614,6 +614,13 @@ footer {
 
 @media screen and (max-width: 500px) {
 
+  .formData[data-error]::after {
+
+    margin: 4px;
+
+
+  }
+
   .bground, .bground-validated{
 
     background-color: transparent;
@@ -625,9 +632,10 @@ footer {
     position: absolute;
     bottom: 0;
     margin: 0px;
-    padding-bottom: 10px;
-
+    padding-bottom: 5px;
     height: 90%;
+
+
 
     border-radius: 10px 10px 0px 0px;
 
@@ -650,7 +658,7 @@ footer {
 
   label{
 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
 
   }
@@ -667,9 +675,15 @@ footer {
 
   }
 
+  .text-control{
+
+    padding: 0px;
+
+  }
+
   .text-label{
 
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 10px;
 
   }
@@ -734,6 +748,30 @@ footer {
     left: -29px;
 
   }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .formData[data-error]::after {
+
+    margin: 0px;
+
+  }
+
+  .text-control{
+
+    height: 30px;
+
+  }
+
+  .btn-submit{
+
+    margin-top: 5px;
+
+  }
+
+
 
 }
 
