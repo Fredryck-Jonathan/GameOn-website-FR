@@ -20,16 +20,13 @@ body {
   max-width: 1300px;
   margin: 0 auto;
 }
-
 p {
   margin-bottom: 0;
   padding: 0.5vw;
 }
-
 img {
   padding-right: 1rem;
 }
-
 .topnav {
   overflow: hidden;
   margin: 3.5%;
@@ -51,37 +48,25 @@ img {
   font-size: 20px;
   font-family: Roboto, sans-serif;
 }
-
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
 }
-
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
 }
-
 .topnav .icon {
   display: none;
 }
 
 @media screen and (max-width: 1050px) {
-
-  /*.main-navbar{
-
-    margin-top: 55px;
-
-  }*/
-
   .topnav a {
-    
     display: none;
     color: #FF001B;
   }
-
   .topnav a.icon {
     float: right;
     display: block;
@@ -103,41 +88,27 @@ img {
   }
 }
 
-
-
 @media screen and (max-width: 800px) {
-  
   .topnav{
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0vw 2vw 0vw 2vw;
     margin: 20px 20px 0px 20px;
-
-
   }
-
-
-
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
   }
-
-    .topnav.responsive .icon {
+  .topnav.responsive .icon {
     position: absolute;
   }
-
   .header-logo img{
-
     width: 103px;
-
   }
 } 
-
 main {
   font-size: 130%;
   font-weight: bolder;
@@ -148,10 +119,7 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
-
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
@@ -163,24 +131,14 @@ main {
   border-radius: 1rem;
   cursor: pointer;
 }
-
 .modal-btn:hover {
   background: #3876ac;
 }
-
 .footer {
   margin: 20px;
   padding: 10px;
   font-family: var(--font-slab);
 }
-
-
-
-
-
-
-
-
 
 /* Modal form and modal Validated */
 .button {
@@ -192,15 +150,12 @@ main {
   cursor: pointer;
   font-size: 16px;
 }
-
 .button:hover {
   background: #3876ac;
 }
-
 .smFont {
   font-size: 16px;
 }
-
 .bground , .bground-validated {
   display: none;
   position: fixed;
@@ -212,7 +167,6 @@ main {
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
-
 .content, .content-validated {
   margin: 5% auto;
   width: 100%;
@@ -226,14 +180,11 @@ main {
   color: #fff;
   padding-top: 10px;
 }
-
 .modal-body, .modal-body-validated {
   padding: 15px 8%;
   margin: 15px auto;
 }
-
 .modal-body-validated{
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,18 +192,12 @@ main {
   height: 100%;
 
 }
-
 .modal-body-validated p {
-
   font-size: 2.5rem;
   text-align: center;
   font-weight: 100;
-
-
 }
-
 .close-btn-bground-validated{
-
   padding: 10px 15%;
   font-size: 1rem;
   color: white;
@@ -260,9 +205,7 @@ main {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
 }
-
 label {
   font-family: var(--font-default);
   font-size: 14px;
@@ -270,20 +213,12 @@ label {
   display: inline-block;
   margin-bottom: 11px;
 }
-
 .label-quantity-desktop{
-
   display: block;
-
 }
-
 .label-quantity-phone{
-
   display: none;
-
 }
-
-
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
@@ -315,12 +250,6 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -429,7 +358,6 @@ input[data-error]::after {
   font-size: 1.1rem;
   font-weight: normal;
 }
-
 .custom-select select {
   display: none;
 }
@@ -457,7 +385,6 @@ input[data-error]::after {
   transform: rotate(135deg);
   top: 13px;
 }
-
 .select-items div,
 .select-selected {
   color: #000;
@@ -569,10 +496,6 @@ footer {
   margin: 0 20px;
 }
 
-
-
-
-
 @media screen and (max-width: 1100px) {
   .hero-section {
     display: block;
@@ -613,102 +536,59 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
-
   .formData[data-error]::after {
-
     margin: 4px;
-
-
   }
-
   .bground, .bground-validated{
-
     background-color: transparent;
-
-}
-
+  }
   .content, .content-validated{
-
     position: absolute;
     bottom: 0;
     margin: 0px;
     padding-bottom: 5px;
-    height: 90%;
-
-
-
+    height: 91%;
     border-radius: 10px 10px 0px 0px;
-
   }
-
-
   .modal-body, .modal-body-validated{
-
     padding: 0px 6%;
-
   }
-
   .close:before, .close:after,
   .close-validated:before, .close-validated:after{
-
     height: 26px;
     width: 2px;
-
   }
-
   label{
-
     font-size: 12px;
     font-weight: 400;
-
   }
-
   .label-quantity-desktop{
-
     display: none;
-
   }
-
   .label-quantity-phone{
-
     display: block;
-
   }
-
   .text-control{
-
     padding: 0px;
-
   }
-
   .text-label{
-
     font-size: 12px;
     margin-top: 10px;
-
   }
-
   .btn-submit{
     font-size: 14px;
     padding: 8px 40px;
     margin-top: 20px;
   }
-
   .hero-section{
-
     min-height: auto;
     margin-bottom: 0px;
-
-
   }
-
   .hero-content{
-
     width: 100%;
     min-width: auto;
     padding: 0px;
   }
-
   .hero-headline {
     font-size: 40px;
     font-weight: 600;
@@ -717,64 +597,40 @@ footer {
     font-size: 13px;
     margin-top: 20px
   }
-
   .hero-section > .btn-signup {
     display: block;
     margin: 32px auto 10px;
     padding: 7px 30px;
-
     font-size: 14px;
   }
   .copyrights {
-
     font-size: 10px;
     font-weight: 500;
-
     margin-top: 0px;
     margin-bottom: 10px;
-
     text-align: center;
   }
-
   .checkbox-label, .checkbox2-label{
-
     margin-left: 33px;
     margin-bottom: 0px;
-
   }
-
   .checkbox-label .checkbox-icon,.checkbox2-label .checkbox-icon{
-
     left: -29px;
-
   }
 
 }
 
 @media screen and (max-width: 400px) {
-
   .formData[data-error]::after {
-
     margin: 0px;
-
   }
-
   .text-control{
-
     height: 30px;
-
   }
-
   .btn-submit{
-
     margin-top: 5px;
-
   }
-
-
-
 }
-
 
 @keyframes modalopen {
   from {
