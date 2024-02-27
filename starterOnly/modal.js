@@ -39,6 +39,16 @@ function closeModal() {
 function closeModalValidated() {
   modalbgValidated.style.display = "none";
 }
+/*
+*Paramétre "element" - L'élément dont l'erreur doit être affichée.
+*Return Boolean - Retourne toujours false pour indiquer qu'il y a eu une erreur.
+*Cette fonction affiche les erreurs lors de la validation si la valeur ne passe pas.
+*/ 
+function montrerErreur(element) {
+  const formDataEvent = element.parentElement;
+  formDataEvent.setAttribute("data-error-visible", "true");
+  return false
+}
 /** 
 *Cette fonction permet d'initier les fonctions de vérification des valeurs des inputs, une fois le bouton submit activer, si les vérifications sont valides affiche la module de validation d'inscriptions.
 */
@@ -66,9 +76,8 @@ function verificationFirstName(){
   if (regex.test(inputFirstName.value)) {
     return true
   } else {
-    inputFirstName.classList.add = "Input-Error"
-    const formDataEvent = inputFirstName.parentElement;
-    formDataEvent.setAttribute("data-error-visible" , "true")
+    inputFirstName.classList.add = "Input-Error";
+    montrerErreur(inputFirstName);
     return false
   }
 }
@@ -82,9 +91,8 @@ function verificationLastName() {
   if (regex.test(inputLastName.value)) {
     return true
   } else {
-    inputLastName.classList.add = "Input-Error"
-    const formDataEvent = inputLastName.parentElement;
-    formDataEvent.setAttribute("data-error-visible", "true")
+    inputLastName.classList.add = "Input-Error";
+    montrerErreur(inputLastName);
     return false
   }
 }
@@ -98,25 +106,41 @@ function verificationEmail() {
   if (regex.test(inputEmail.value)) {
     return true
   } else {
-    const formDataEvent = inputEmail.parentElement;
-    formDataEvent.setAttribute("data-error-visible" , "true")
+    montrerErreur(inputEmail);
     return false
   }
 }
 /** 
 *Return Boolean(True or False)
-*Cette fonction permet de vérifié la valeur de l'input Date de naissance, grace à une regex, si elle est valide renvoie True sinon renvoie False.
+*Cette fonction permet de vérifié la valeur de l'input Date de naissance, si elle est valide renvoie True sinon renvoie False.
 */
 function verificationBirthdate() {
   const inputBirthdate = document.getElementById("birthdate");
-  const regex = /^.{1,}$/;
-  if (regex.test(inputBirthdate.value)) {
-    return true
-  } else {
-    const formDataEvent = inputBirthdate.parentElement;
-    formDataEvent.setAttribute("data-error-visible" , "true")
+  const regex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!regex.test(inputBirthdate.value)) {
+    montrerErreur(inputBirthdate);
     return false
-  }
+  } else {
+    const parties = inputBirthdate.value.split('-');
+    const année = parseInt(parties[0], 10);
+    const mois = parseInt(parties[1], 10) - 1;
+    const jour = parseInt(parties[2], 10);
+    const dateBirthdate = new Date(année, mois, jour);
+    const dateActuelle = new Date();
+    dateActuelle.setHours(0, 0, 0, 0);
+    if (dateBirthdate > dateActuelle) {
+      montrerErreur(inputBirthdate);
+    } else {
+      let difference = dateActuelle - dateBirthdate;
+      difference = new Date(difference);
+      const age = Math.abs((difference).getUTCFullYear() - 1970);
+      if (age < 13 || age > 90) {
+        montrerErreur(inputBirthdate);
+      } else {
+        return true
+      }
+    }
+  } 
 }
 /** 
 *Return Boolean(True or False)
@@ -128,9 +152,7 @@ function verificationNumberOfCompetition() {
   if (regex.test(inputQuantity.value) === true) {
     return true
   } else {
-    const formDataEvent = inputQuantity.parentElement;
-    formDataEvent.setAttribute("data-error-visible" , "true")
-    return false
+    montrerErreur(inputQuantity);
   }
 }
 /** 
@@ -140,8 +162,7 @@ function verificationNumberOfCompetition() {
 function verificationWishTournament() { 
   const inputsLocationChecked = document.querySelector('input[name^="location"]:checked');
   if (!inputsLocationChecked) {
-    const formDataEvent = document.getElementById('location1').parentElement;
-    formDataEvent.setAttribute("data-error-visible" , "true")
+    montrerErreur(document.getElementById('location1'));
     return false
   } else { 
     return true
@@ -156,9 +177,7 @@ function verificationConditionOfUtilisation() {
   if (inputConditionOfUtilisation.checked === true) {
     return true
   } else {
-    const formDataEvent = inputConditionOfUtilisation.parentElement;
-    formDataEvent.setAttribute("data-error-visible" , "true")
-    return false
+    montrerErreur(inputConditionOfUtilisation)
   }
 }
 
